@@ -1,11 +1,12 @@
 <template>
-  <p>The user is x years old.</p>
+  <p>The {{firstName}} is {{age}} years old.</p>
 </template>
 
 <script>
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
-  name: "User"
+  name: "User",
+  props: ["age", "firstName"]
 }
 </script>
 
