@@ -1,6 +1,7 @@
 /* eslint-disable vue/multi-word-component-names */
 <template>
-  <p>{{msg}}</p>
+  <p v-if="age > 25">{{msg}}</p>
+  <p v-else>You must be 25 years old or older to view this message.</p>
 </template>
 
 <script>
@@ -8,6 +9,7 @@
   export default {
     // eslint-disable-next-line vue/multi-word-component-names
     name: "Greeting",
+    props: ['age'],
     data(){
       return {
         msg: "Kiil Putin."

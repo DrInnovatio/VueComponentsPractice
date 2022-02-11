@@ -1,7 +1,8 @@
 <template>
   <h3>hey</h3>
-  <greeting></greeting>
-  <user :age="age" :firstName="firstName"></user>
+  <button type="button" @click="age++">Update Age</button>
+  <greeting :age="age"></greeting>
+  <user :age="age" @age-change="age++" :firstName="firstName"></user>
 </template>
 
 <script>
@@ -13,7 +14,7 @@ import User from "./components/User.vue"
     name: "App",
     components: {
       Greeting,
-      User,
+      User, 
     },
     data(){
       return {
