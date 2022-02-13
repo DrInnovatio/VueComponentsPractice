@@ -2,7 +2,7 @@
   <h3>hey</h3>
   <button type="button" @click="age++">Update Age</button>
   <greeting :age="age"></greeting>
-  <user :age="age" @age-change="updateAge" :firstName="firstName"></user>
+  <user :age="age" @age-change="updateAge" :ageChangeFn="updateAgeCB" :firstName="firstName"></user>
 </template>
 
 <script>
@@ -25,9 +25,11 @@ import User from "./components/User.vue"
     methods: {
       updateAge(num){
         this.age += num;
+      },
+      updateAgeCB(num){
+        this.age += num;
       }
     }
-
   }
 </script>
 
